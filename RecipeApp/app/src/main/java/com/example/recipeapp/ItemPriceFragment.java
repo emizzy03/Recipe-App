@@ -12,9 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Spinner;
+import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * ItemPriceFragment displays average recipe ingredient costs at various stores
+ * (e.g., Walmart, Target). Users can select a recipe and store via the UI
+ * to see estimated pricing.
+ */
 public class ItemPriceFragment extends Fragment {
 
     private ItemPriceViewModel mViewModel;
@@ -32,8 +38,8 @@ public class ItemPriceFragment extends Fragment {
         imgBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Spinner userspinner = (Spinner) root.findViewById(R.id.spinner);
-                String userSelected = userspinner.getSelectedItem().toString();
+                AutoCompleteTextView userspinner = (AutoCompleteTextView) root.findViewById(R.id.spinner);
+                String userSelected = userspinner.getText().toString().trim();
                 String item = "";
 
                 String[] stringArray = getResources().getStringArray(R.array.totalPriceWalmart);
@@ -43,6 +49,7 @@ public class ItemPriceFragment extends Fragment {
                         break;
                     case "Chewy Chocolate Chip Cookies":
                         item = stringArray[1];
+                        break;
                     case "Tater Tot Chips w/ Loaded Green Onion Dip":
                         item = stringArray[2];
                         break;
@@ -57,8 +64,8 @@ public class ItemPriceFragment extends Fragment {
         imgBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Spinner userspinner = (Spinner) root.findViewById(R.id.spinner);
-                String userSelected = userspinner.getSelectedItem().toString();
+                AutoCompleteTextView userspinner = (AutoCompleteTextView) root.findViewById(R.id.spinner);
+                String userSelected = userspinner.getText().toString().trim();
                 String item = "";
 
                 String[] stringArray = getResources().getStringArray(R.array.totalPriceTarget);
@@ -68,6 +75,7 @@ public class ItemPriceFragment extends Fragment {
                         break;
                     case "Chewy Chocolate Chip Cookies":
                         item = stringArray[1];
+                        break;
                     case "Tater Tot Chips w/ Loaded Green Onion Dip":
                         item = stringArray[2];
                         break;

@@ -12,6 +12,7 @@ import com.example.recipeapp.HomeFragment;
 import com.example.recipeapp.ItemPriceFragment;
 import com.example.recipeapp.R;
 import com.example.recipeapp.VideoFragment;
+import com.example.recipeapp.AiRecipeFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -20,7 +21,7 @@ import com.example.recipeapp.VideoFragment;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3, R.string.tab_text_4};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -35,6 +36,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         if (position == 0)fragment= new HomeFragment();
         else if (position == 1)fragment = new ItemPriceFragment();
         else if (position == 2)fragment = new VideoFragment();
+        else if (position == 3)fragment = new AiRecipeFragment();
 
         return fragment;
     }
@@ -47,7 +49,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        // Show 4 total pages.
+        return 4;
     }
 }

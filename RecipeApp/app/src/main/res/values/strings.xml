@@ -4,21 +4,16 @@
     <string name="tab_text_1">HomePage</string>
     <string name="tab_text_2">Food Total Price</string>
     <string name="tab_text_3">Watch Food</string>
+    <string name="tab_text_4">AI Recipe</string>
     <string name="frag1">fragment 1</string>
     <string name="frag2">fragment 2</string>
     <string name="imgWalmart">Walmart Image</string>
     <string name="ImgTarget">Target Image</string>
     <string name="click_here_for_total_price">Click Here for Total Price: </string>
     <string-array name="Foods">
-        <item>
-Crab Cake Sandwiches
-</item>
-        <item>
-Chewy Chocolate Chip Cookies
-</item>
-        <item>
-Tater Tot Chips w/ Loaded Green Onion Dip
-</item>
+        <item>Crab Cake Sandwiches</item>
+        <item>Chewy Chocolate Chip Cookies</item>
+        <item>Tater Tot Chips w/ Loaded Green Onion Dip</item>
     </string-array>
     <string-array name="Ingredients">
         <item>
@@ -57,27 +52,15 @@ Kosher salt and freshly ground black pepper\n\n
 
     </string-array>
     <string-array name="totalPriceWalmart">
-    <item>
-        The Total Average Price at Walmart is $48.10
-    </item>
-    <item>
-        The Total Average Price at Walmart is $35.00
-    </item>
-    <item>
-       The Total Average Price at Walmart is $27.53
-    </item>
+        <item>The Total Average Price at Walmart is $48.10</item>
+        <item>The Total Average Price at Walmart is $35.00</item>
+        <item>The Total Average Price at Walmart is $27.53</item>
     </string-array>
 
 
 <string-array name="totalPriceTarget">
-<item>
-        The Total Average Price at Target is $48.10
-    </item>
-<item>
-        The Total Average Price at Target is $32.44
-    </item>
-<item>
-       The Total Average Price at Target is $21.07
-    </item>
+    <item>The Total Average Price at Target is $48.10</item>
+    <item>The Total Average Price at Target is $32.44</item>
+    <item>The Total Average Price at Target is $21.07</item>
 </string-array>
 </resources>

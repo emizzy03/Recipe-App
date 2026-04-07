@@ -16,9 +16,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.Spinner;
+import android.widget.AutoCompleteTextView;
 import android.widget.VideoView;
 
+/**
+ * VideoFragment handles the playback of recipe tutorials.
+ * It uses a VideoView to play selected recipe videos from local resources.
+ */
 public class VideoFragment extends Fragment {
 
     private VideoViewModel mViewModel;
@@ -35,30 +39,30 @@ public class VideoFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Spinner userSelected = (Spinner) root.findViewById(R.id.spinner2);
-                String user = userSelected.getSelectedItem().toString();
+                AutoCompleteTextView userSelected = (AutoCompleteTextView) root.findViewById(R.id.spinner2);
+                String user = userSelected.getText().toString().trim();
                 VideoView videoView = (VideoView) root.findViewById(R.id.videoView2);
-                Uri videoUri1 = Uri.parse("android.resource://" +getContext().getPackageName()+ "/" + R.raw.facebook_20240429_205118);
-                Uri videoUri2 = Uri.parse("android.resource://" +getContext().getPackageName()+ "/" + R.raw.facebook_20240429_204224);
-                Uri videoUri3 = Uri.parse("android.resource://" +getContext().getPackageName()+ "/" + R.raw.facebook_20240429_200928);
+                if (getContext() == null) return;
+                
+                String pkgName = getContext().getPackageName();
+                Uri videoUri1 = Uri.parse("android.resource://" + pkgName + "/" + R.raw.facebook_20240429_205118);
+                Uri videoUri2 = Uri.parse("android.resource://" + pkgName + "/" + R.raw.facebook_20240429_204224);
+                Uri videoUri3 = Uri.parse("android.resource://" + pkgName + "/" + R.raw.facebook_20240429_200928);
+                
                 switch (user) {
                     case "Crab Cake Sandwiches":
                         videoView.setVideoURI(videoUri1);
-                        videoView.canPause();
                         videoView.start();
                         break;
                     case "Chewy Chocolate Chip Cookies":
                         videoView.setVideoURI(videoUri2);
-                        videoView.canPause();
                         videoView.start();
                         break;
                     case "Tater Tot Chips w/ Loaded Green Onion Dip":
                         videoView.setVideoURI(videoUri3);
-                        videoView.canPause();
                         videoView.start();
                         break;
                     default:
-
                         break;
                 }
 

@@ -16,6 +16,11 @@ import android.view.View;
 import com.example.recipeapp.ui.main.SectionsPagerAdapter;
 import com.example.recipeapp.databinding.ActivityMainBinding;
 
+/**
+ * MainActivity serves as the main host activity for this application.
+ * It sets up the ViewPager and TabLayout to allow navigation between the
+ * Home, ItemPrice, Video, and AiRecipe fragments.
+ */
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
@@ -26,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        
+        setSupportActionBar(binding.toolbar);
 
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = binding.viewPager;
