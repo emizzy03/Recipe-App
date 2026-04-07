@@ -19,8 +19,9 @@ import android.widget.TextView;
 
 /**
  * HomeFragment displays the main screen of the application.
- * It provides a Spinner to select a recipe and displays the corresponding image
- * and ingredients.
+ * It uses the MVVM pattern with HomeViewModel and LiveData to display
+ * recipe details (images and ingredients). It features a Material 3
+ * Exposed Dropdown Menu (AutoCompleteTextView) for recipe selection.
  */
 public class HomeFragment extends Fragment {
 

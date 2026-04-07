@@ -2,8 +2,6 @@
 
 Welcome to the **Recipe App**, a modern, feature-rich Android application designed to help users explore delicious recipes, check supermarket pricing, watch recipe tutorials, and now—**generate dynamic recipes instantly using AI.**
 
-![Recipe App Interface](https://github.com/user-attachments/assets/bb2118d1-97b4-4dbc-adf8-ec7d5af2236a)
-
 ## ✨ Features
 
 - **AI Recipe Generator**: Provide a list of ingredients you currently have, and the app leverages the **OpenAI API** to instantly suggest a custom, detailed recipe for you.
@@ -14,7 +12,8 @@ Welcome to the **Recipe App**, a modern, feature-rich Android application design
 ## 🛠 Tech Stack
 
 - **Platform**: Android (Java & XML)
-- **Architecture**: Modular Fragments with a `ViewPager` tab layout.
+- **Architecture**: **MVVM (Model-View-ViewModel)** with LiveData for reactive state management.
+- **UI Components**: Material 3 Design, including `Exposed Dropdown Menus` and `NestedScrollView`.
 - **Network / API Integration**: HTTP REST requests for AI interaction utilizing native `HttpURLConnection` and Java Executors for background processing.
 - **Build System**: Kotlin DSL (`build.gradle.kts`) with Gradle properties secrets management.
 
@@ -47,10 +46,13 @@ Welcome to the **Recipe App**, a modern, feature-rich Android application design
 
 ## 📂 Project Architecture Showcase
 
-The project emphasizes separation of concerns by using the Fragment-based UI, meaning every core piece of functionality operates smoothly inside the broader `MainActivity` host:
+The project emphasizes separation of concerns by using the **MVVM Pattern**, meaning data management is handled by ViewModels while fragments focus exclusively on the UI:
+
+- `HomeViewModel.java`: Handles selection logic, manages recipe data across navigation, and exposes `LiveData` for reactive UI updates.
+- `HomeFragment.java`: Uses Material 3 components and observes the `HomeViewModel` to display recipe details seamlessly and restore state when navigating between tabs.
 - `AiRecipeFragment.java`: Manages the concurrent HTTP operations connecting to OpenAI.
-- `SectionsPagerAdapter.java`: Cleanly marshals the fragment back-stack logic.
-- `ItemPriceFragment.java`: Encapsulates string array processing and data injection into UI components cleanly.
+- `ItemPriceFragment.java`: Encapsulates pricing analysis and data injection into UI components cleanly.
+- `SectionsPagerAdapter.java`: Cleanly marshals the fragment back-stack logic for the `ViewPager`.
 
 ---
 *Created as part of an Android Development showcase. Contributions, forks, and feedback are always welcome!*

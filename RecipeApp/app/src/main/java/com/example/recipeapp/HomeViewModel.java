@@ -4,6 +4,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+/**
+ * HomeViewModel is the ViewModel class that handles data selection logic for the HomeFragment.
+ * It manages the ingredients and image resources for different recipes as LiveData
+ * and tracks the currently selected recipe name for state restoration.
+ */
 public class HomeViewModel extends ViewModel {
     private final MutableLiveData<String> ingredients = new MutableLiveData<>();
     private final MutableLiveData<Integer> imageResource = new MutableLiveData<>();
