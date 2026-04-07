@@ -1,4 +1,4 @@
-# 🍲 AI Recipe Assistant App
+# 🍲 Recipe App
 
 Welcome to the **Recipe App**, a modern, feature-rich Android application designed to help users explore delicious recipes, check supermarket pricing, watch recipe tutorials, and now—**generate dynamic recipes instantly using AI.**
 
